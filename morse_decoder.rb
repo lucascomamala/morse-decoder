@@ -13,21 +13,19 @@ def decode_char(char)
 end
 
 def decode_word(string)
-  word = ""
+  word = ''
   arr = string.split(/ /)
-  arr.each { |l|
-    word += decode_char(l)
-  }
+  arr.each { |l| word += decode_char(l) }
   word
 end
 
 def decode_message(string)
-  new_string = ""
+  new_string = ''
   arr = string.split(/   /)
-  arr.each { |w|
+  arr.each do |w|
     new_string += decode_word(w)
-    new_string += " "
-  }
+    new_string += ' '
+  end
   new_string
 end
 
